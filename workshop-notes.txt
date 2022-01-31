@@ -1,0 +1,53 @@
+workshop tasks:
+
+
+0 - Introduction - general intro to RTL
+	- Types of queries, difference between getBy* / queryBy* / findBy*
+	- User Actions
+
+
+1 - Queries - Priority, screen
+
+	Task: Test AnimalInfo component is rendering (Mocking axios to return data)
+		- Heading
+		- Images
+		- Bullet points
+		- Like button
+		- Next button
+
+
+2 - Mocking - When to use jest spyOn(), mock() (specify differences)
+
+	Task: Test storage helper
+
+
+3 - Testing Interaction
+
+	Task: Test AnimalInfo and SavedList by mocking like context
+	 	- Test liked animals are rendered corrctly
+	 	- Test remove button is calling function correclty on click
+
+4 - Putting It All Together
+
+	Task: Test next button is doing new request
+
+
+5 - Common mistakes / Things to avoid
+	- Not using `screen`
+	- Using `act` when not needed
+	- Using `cleanup`
+	- Using `wrapper` as the variable name for the return value from `render`
+	- Using query* variants for anything except checking for non-existence
+	- Using `waitFor` incorrectly
+
+
+7 - Tooling
+	- Using Testing Library ESLint plugins
+		- `eslint-plugin-testing-library`
+		- `eslint-plugin-jest-dom`
+	- Using Testing Library utilities plugins
+		- `@testing-library/user-event`
+		- `@testing-library/react-hooks`
+		- `@testing-library/jest-dom`
+
+
