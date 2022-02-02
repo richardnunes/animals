@@ -1,20 +1,18 @@
 # Introduction
 
-In this workshop...
+This workshop will cover how to test React components using Jest and React Testing Library. We'll go through a series of tasks and highlight the best practices when using these tools for React testing.
 
-## What is Jest?
+## What is [Jest](https://jestjs.io/)?
 
-Jest is a JavaScript testing framework and test runner that provides mocking utilities.
+Jest is a JavaScript **testing framework and runner** that provides built-in mocking utilities.
 
-## What is React Testing Library (RTL)?
+## What is [React Testing Library](https://testing-library.com/)?
 
-RTL is a set of utilities for DOM manipulation that allows us to test React components.
+React Testing Library (RTL) is a set of **utilities for DOM manipulation** that focuses on testing React components.
 
-![quote](../assets/kent-c-dodds-quote.png)
+![Quote from Kent C. Dodds](../assets/kent-c-dodds-quote.png)
 
 These utilities encourage testing components the way users interact with them. This makes tests simpler by testing behaviour rather than implementation details.
-
-<https://testing-library.com/>
 
 ### RTL common utilities
 
