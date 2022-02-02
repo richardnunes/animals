@@ -24,8 +24,8 @@ workshop tasks:
 3 - Testing Interaction
 
 	Task: Test AnimalInfo and SavedList by mocking like context
-	 	- Test liked animals are rendered corrctly
-	 	- Test remove button is calling function correclty on click
+	 	- Test liked animals are rendered correctly
+	 	- Test remove button is calling function correctly on click
 
 4 - Putting It All Together
 
