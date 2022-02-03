@@ -15,17 +15,20 @@ workshop tasks:
 		- Like button
 		- Next button
 
-
-2 - Mocking - When to use jest spyOn(), mock() (specify differences)
-
-	Task: Test storage helper
-
-
-3 - Testing Interaction
+2 - Testing Interaction
 
 	Task: Test AnimalInfo and SavedList by mocking like context
 	 	- Test liked animals are rendered correctly
 	 	- Test remove button is calling function correctly on click
+
+		 Mocking - When to use jest spyOn(), mock() (specify differences)
+
+3 - Testing custom hook
+
+    Task: Test `useFetchNext` hook
+		- Test data and error is returned
+
+		Mocking: Mock `axios`
 
 4 - Putting It All Together
 
@@ -41,7 +44,7 @@ workshop tasks:
 	- Using `waitFor` incorrectly
 
 
-7 - Tooling
+6 - Tooling
 	- Using Testing Library ESLint plugins
 		- `eslint-plugin-testing-library`
 		- `eslint-plugin-jest-dom`

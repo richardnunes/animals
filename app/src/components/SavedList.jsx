@@ -18,7 +18,9 @@ const SavedList = () => {
 
   return (
     <div className="saved-item-container">
-      <h1>Animals I 💖</h1>
+      <h1>
+        Animals I Like <span aria-hidden>👍</span>
+      </h1>
       <ul className="saved-item-list">{listItems}</ul>
     </div>
   );

@@ -2,6 +2,11 @@
 
 This workshop will cover how to test React components using Jest and React Testing Library. We'll go through a series of tasks and highlight the best practices when using these tools for React testing.
 
+### Before we begin
+
+- **[Optional]** - Create a codesandbox account: https://codesandbox.io/signin
+- Fork the following codesandbox project: https://codesandbox.io/link-to-sandbox
+
 ## What is [Jest](https://jestjs.io/)?
 
 Jest is a JavaScript **testing framework and runner** that provides built-in mocking utilities.
@@ -21,3 +26,5 @@ These utilities encourage testing components the way users interact with them. T
 - `findBy*` and `findAllBy*` - Returns a `Promise` which resolves when the element(s) for a query is found. The `Promise` is rejected if no element(s) is found.
 - `fireEvent` - Methods for firing DOM events (`click`, `focus`, etc.)
 - `waitFor` and `waitForElementToBeRemoved` - Methods to wait for an element to appear or disappear in response to an event, user action, timeout, or `Promise`.
+
+#### Next: [1. Queries](../1.queries/README.md)

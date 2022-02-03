@@ -1,5 +1,11 @@
 # 1 - Queries
 
+## Task
+
+Test the UI components from `AnimalInfo` component get rendered as expected.
+
+Go to file in your codesandbox: ``
+
 ### **Reminder:** Recommended RTL queries priority
 
 When possible, queries should be used in the following priority order:
@@ -19,3 +25,5 @@ When possible, queries should be used in the following priority order:
 7. `*ByTitle`: The title attribute is not consistently read by screen readers, and is not visible by default for sighted users.
 
 8. `*ByTestId`: The user cannot see/hear these, so this is only recommended for cases where you can't match by role or text.
+
+#### Next: [Solution to queries task](./SOLUTION.md)
