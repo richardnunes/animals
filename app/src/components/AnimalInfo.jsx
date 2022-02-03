@@ -5,16 +5,8 @@ const AnimalInfo = () => {
   const { likeItem } = useLikes();
   const { isError, response, fetchNext } = useFetchNext();
 
-  const {
-    name,
-    image_link,
-    latin_name,
-    animal_type,
-    active_time,
-    habitat,
-    diet,
-    geo_range
-  } = response;
+  const { name, image_link, latin_name, animal_type, active_time, habitat } =
+    response;
 
   return (
     <>
@@ -38,8 +30,6 @@ const AnimalInfo = () => {
                   <li>Animal Type: {animal_type}</li>
                   <li>Active Time: {active_time}</li>
                   <li>Habitat: {habitat}</li>
-                  <li>Diet: {diet}</li>
-                  <li>Geo Range: {geo_range}</li>
                 </ul>
                 <button
                   className="like-button"
