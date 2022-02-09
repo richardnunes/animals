@@ -4,8 +4,9 @@ This workshop will cover how to test React components using Jest and React Testi
 
 ### Before we begin
 
-- **[Optional]** - Create a codesandbox account: https://codesandbox.io/signin
-- Fork the following codesandbox project: https://codesandbox.io/link-to-sandbox
+- Node.js v14.18
+- Clone the following repo [url]
+- Follow instructions on the README file to setup the app
 
 ## What is [Jest](https://jestjs.io/)?
 

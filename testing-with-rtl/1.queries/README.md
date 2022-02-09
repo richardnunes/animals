@@ -1,14 +1,8 @@
-# 1 - Queries
+# 1. Queries
 
-## Task
+Queries are types of methods that RTL gives us to find elements on the page such as `get`, `find`, `query`. The difference between them is whether the query will throw an error if no element is found or if it will return a Promise and retry. Depending on what page content we select, different queries may be more or less appropriate. 
 
-Test the UI components from `AnimalInfo` component get rendered as expected.
-
-Go to file in your codesandbox: ``
-
-### **Reminder:** Recommended RTL queries priority
-
-When possible, queries should be used in the following priority order:
+A [priority guide](https://testing-library.com/docs/queries/about/#priority) recommends on how to make use of semantic queries to test your components in the most accessible way:
 
 1. `*ByRole`: This can be used to query every element that is exposed in the accessibility tree. This should be your top preference for just about everything. Most often, this will be used with the name option like so: `getByRole('button', { name: 'Submit' })`
 
@@ -25,5 +19,11 @@ When possible, queries should be used in the following priority order:
 7. `*ByTitle`: The title attribute is not consistently read by screen readers, and is not visible by default for sighted users.
 
 8. `*ByTestId`: The user cannot see/hear these, so this is only recommended for cases where you can't match by role or text.
+## Task
 
-#### Next: [Solution to queries task](./SOLUTION.md)
+Test the UI components in `InfoTile` get rendered as expected.
+
+1. Go to file `/src/tests/task-01-queries.test.js`
+2. Write tests for each test case on the file.
+
+#### Next: [Solution for 1. Queries](./SOLUTION.md)

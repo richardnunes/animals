@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import storage from "../helpers/storage";
 
-const LikesContext = createContext({});
+export const LikesContext = createContext({});
 
 export const useLikes = () => useContext(LikesContext);
 

@@ -5,23 +5,25 @@ const SavedList = () => {
 
   if (Object.keys(likes).length === 0) return null;
 
-  const listItems = Object.keys(likes).map((keyName, keyIndex) => (
-    <li className="saved-list-item" key={`saved-item-${keyName}`}>
-      <img
-        className="saved-item-image"
-        alt={likes[keyName].name}
-        src={likes[keyName].image_link}
-      />
-      <button onClick={() => removeItem(likes[keyName])}>Remove</button>
-    </li>
-  ));
+  const renderSavedAnimals = () =>
+    Object.keys(likes).map((keyName) => {
+      const item = likes[keyName];
+      const { name, image_link } = item;
+
+      return (
+        <li className="saved-list-item" key={`saved-item-${keyName}`}>
+          <img className="saved-item-image" alt={name} src={image_link} />
+          <button onClick={() => removeItem(item)}>Remove</button>
+        </li>
+      );
+    });
 
   return (
     <div className="saved-item-container">
       <h1>
         Animals I Like <span aria-hidden>👍</span>
       </h1>
-      <ul className="saved-item-list">{listItems}</ul>
+      <ul className="saved-item-list">{renderSavedAnimals()}</ul>
     </div>
   );
 };

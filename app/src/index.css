@@ -44,6 +44,7 @@ button:hover {
   align-items: center;
   flex-direction: column;
   align-content: center;
+  margin-bottom: 10px;
 }
 
 .saved-item-list,
@@ -76,6 +77,14 @@ button:hover {
 .like-button {
   width: 180px;
   margin-left: 50px;
+}
+
+.next-button {
+  position: absolute;
+  right: 10%;
+  max-width: 10%;
+  text-align: center;
+  padding: 6px;
 }
 
 .animal-info {
