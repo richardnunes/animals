@@ -1,4 +1,4 @@
-const STORAGE_KEY = "amimals";
+const STORAGE_KEY = "animals";
 
 const storage = {
   getAll: () => {
