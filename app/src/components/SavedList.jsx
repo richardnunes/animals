@@ -1,7 +1,24 @@
+import { useState } from "react";
 import { useLikes } from "../contexts/Likes";
 
 const SavedList = () => {
-  const { likes, removeItem } = useLikes();
+  const { likes, removeItems } = useLikes();
+  const [checkedItems, setCheckedItems] = useState([]);
+
+  const handleClick = ({ target }) => {
+    const { id, value } = target;
+    const tmpCheckItems = [...checkedItems];
+
+    if (value === true) {
+      tmpCheckItems.push(id);
+
+      setCheckedItems(tmpCheckItems);
+    } else {
+      const filteredArray = checkedItems.filter((item) => item !== id);
+
+      setCheckedItems(filteredArray);
+    }
+  };
 
   if (Object.keys(likes).length === 0) return null;
 
@@ -13,7 +30,18 @@ const SavedList = () => {
       return (
         <li className="saved-list-item" key={`saved-item-${keyName}`}>
           <img className="saved-item-image" alt={name} src={image_link} />
-          <button onClick={() => removeItem(item)}>Remove</button>
+          <input
+            type="checkbox"
+            name={keyName}
+            onChange={(e) =>
+              handleClick({
+                target: {
+                  id: e.target.name * 1,
+                  value: e.target.checked,
+                },
+              })
+            }
+          ></input>
         </li>
       );
     });
@@ -24,6 +52,15 @@ const SavedList = () => {
         Animals I Like <span aria-hidden>👍</span>
       </h1>
       <ul className="saved-item-list">{renderSavedAnimals()}</ul>
+      <button
+        disabled={checkedItems.length === 0}
+        onClick={() => {
+          removeItems(checkedItems);
+          setCheckedItems([]);
+        }}
+      >
+        Remove
+      </button>
     </div>
   );
 };

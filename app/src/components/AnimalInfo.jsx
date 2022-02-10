@@ -4,7 +4,7 @@ import InfoTile from "./InfoTile";
 
 const AnimalInfo = () => {
   const { likeItem } = useLikes();
-  const { isError, response, fetchNext } = useFetchNext();
+  const { isError, response, fetchNext } = useFetchNext("https://zoo-animal-api.herokuapp.com/animals/rand");
 
   return (
     <>

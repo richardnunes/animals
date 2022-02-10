@@ -30,6 +30,13 @@ button:hover {
   color: white;
 }
 
+button[disabled] {
+  border: 2px solid #cecece;
+  background-color: #e0e0e0;
+  color: #cecece;
+  cursor: not-allowed;
+}
+
 .App {
   display: flex;
   flex-direction: column;

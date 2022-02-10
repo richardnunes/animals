@@ -28,16 +28,16 @@ export const LikesProvider = ({ children }) => {
         };
       });
     },
-    removeItem: (item) => {
-      const { id } = item;
+    removeItems: (items) => {
+      items.forEach((id) => {
+        storage.removeFromLocalStorage(id);
 
-      storage.removeFromLocalStorage(id);
-
-      setLikesState((prevState) => {
-        delete prevState.likes[id];
-        return {
-          ...prevState,
-        };
+        setLikesState((prevState) => {
+          delete prevState.likes[id];
+          return {
+            ...prevState,
+          };
+        });
       });
     },
   });
