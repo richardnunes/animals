@@ -5,11 +5,10 @@ const SavedList = () => {
   const { likes, removeItems } = useLikes();
   const [checkedItems, setCheckedItems] = useState([]);
 
-  const handleClick = ({ target }) => {
-    const { id, value } = target;
+  const handleClick = (id, value) => {
     const tmpCheckItems = [...checkedItems];
 
-    if (value === true) {
+    if (value) {
       tmpCheckItems.push(id);
 
       setCheckedItems(tmpCheckItems);
@@ -33,14 +32,8 @@ const SavedList = () => {
           <input
             type="checkbox"
             name={keyName}
-            onChange={(e) =>
-              handleClick({
-                target: {
-                  id: e.target.name * 1,
-                  value: e.target.checked,
-                },
-              })
-            }
+            aria-label={`Select ${name} to be removed`}
+            onChange={(e) => handleClick(e.target.name, e.target.checked)}
           ></input>
         </li>
       );
@@ -48,10 +41,12 @@ const SavedList = () => {
 
   return (
     <div className="saved-item-container">
-      <h1>
+      <h1 id="liked-animals">
         Animals I Like <span aria-hidden>👍</span>
       </h1>
-      <ul className="saved-item-list">{renderSavedAnimals()}</ul>
+      <ul className="saved-item-list" aria-labelledby="liked-animals">
+        {renderSavedAnimals()}
+      </ul>
       <button
         disabled={checkedItems.length === 0}
         onClick={() => {

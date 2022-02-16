@@ -16,7 +16,7 @@ describe("given the SavedList component is rendered", () => {
   const likeContext = {
     likes: {},
     likeItem: jest.fn(),
-    removeItem: jest.fn(),
+    removeItems: jest.fn(),
   };
 
   const renderListComponent = (likes = {}) => {
@@ -52,15 +52,35 @@ describe("given the SavedList component is rendered", () => {
       expect(screen.getAllByRole("img")).toHaveLength(2);
     });
 
-    describe("and the remove button is clicked on an item", () => {
-      it("then should call the removeItem function", () => {
+    it("should contain checkboxes for each item", () => {
+      renderListComponent(mockLikesWithItems);
+
+      expect(screen.getAllByRole("checkbox")).toHaveLength(2);
+    });
+
+    describe("and none have been checked", () => {
+      it("then the remove button should be disabled", () => {
         renderListComponent(mockLikesWithItems);
 
-        fireEvent.click(screen.getAllByRole("button", { name: "Remove" })[0]);
+        expect(screen.getByRole("button", { name: "Remove" })).toBeDisabled();
+      });
+    });
 
-        expect(likeContext.removeItem).toHaveBeenCalledWith(
-          mockLikesWithItems["one"]
-        );
+    describe("and the a checkbox for an item is selected", () => {
+      describe("and the remove button is clicked", () => {
+        it("then should call the removeItems function", () => {
+          renderListComponent(mockLikesWithItems);
+
+          fireEvent.click(
+            screen.getAllByRole("checkbox", {
+              name: "Select test-name-1 to be removed",
+            })[0]
+          );
+
+          fireEvent.click(screen.getByRole("button", { name: "Remove" }));
+
+          expect(likeContext.removeItems).toHaveBeenCalledWith(["one"]);
+        });
       });
     });
   });
