@@ -4,7 +4,9 @@ import InfoTile from "./InfoTile";
 
 const AnimalInfo = () => {
   const { likeItem } = useLikes();
-  const { isError, response, fetchNext } = useFetchNext("https://zoo-animal-api.herokuapp.com/animals/rand");
+  const { isError, response, fetchNext } = useFetchNext(
+    "https://zoo-animal-api.herokuapp.com/animals/rand"
+  );
 
   return (
     <>
@@ -15,17 +17,22 @@ const AnimalInfo = () => {
         {isError && <div className="error-message">Something went wrong</div>}
         {response && !isError && (
           <>
-            <button className="next-button" onClick={fetchNext}>
-              <span role="img" aria-label="next">
-                🔄
-              </span>
-            </button>
-            <button className="like-button" onClick={() => likeItem(response)}>
-              <span role="img" aria-label="like">
-                👍
-              </span>
-            </button>
             <InfoTile {...response} />
+            <div className="button-container">
+              <button
+                className="like-button"
+                onClick={() => likeItem(response)}
+              >
+                <span role="img" aria-label="like">
+                  👍
+                </span>
+              </button>
+              <button className="next-button" onClick={fetchNext}>
+                <span role="img" aria-label="next">
+                  🔄
+                </span>
+              </button>
+            </div>
           </>
         )}
       </div>

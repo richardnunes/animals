@@ -80,18 +80,19 @@ button[disabled] {
   justify-content: space-evenly;
 }
 
+.button-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
 .next-button,
 .like-button {
   width: 180px;
-  margin-left: 50px;
 }
 
-.next-button {
-  position: absolute;
-  right: 10%;
-  max-width: 10%;
-  text-align: center;
-  padding: 6px;
+.like-button {
+  margin-right: 56px;
 }
 
 .animal-info {
