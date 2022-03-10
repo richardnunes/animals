@@ -22,6 +22,20 @@ A [priority guide](https://testing-library.com/docs/queries/about/#priority) rec
 
 8. `*ByTestId`: The user cannot see/hear these, so this is only recommended for cases where you can't match by role or text.
 
+```js
+const OurComponent = () => {  // r/unexpectedcommunism
+    return {
+        <h1>Hello World!</h1>
+    };
+};
+
+render(<OurComponent />);
+
+expect(
+  screen.getByRole("heading", { name: "Hello World!" })
+).toBeInTheDocument();
+```
+
 ## Task
 
 Test the UI components in `InfoTile` get rendered as expected using the queries above.
