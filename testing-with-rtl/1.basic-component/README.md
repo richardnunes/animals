@@ -1,6 +1,8 @@
-# 1. Queries
+# 1. Basic Component
 
-Queries are types of methods that RTL gives us to find elements on the page such as `get`, `find`, `query`. The difference between them is whether the query will throw an error if no element is found or if it will return a Promise and retry. Depending on what page content we select, different queries may be more or less appropriate. 
+## Queries
+
+Queries are types of methods that RTL gives us to find elements on the page such as `get`, `find`, `query`. The difference between them is whether the query will throw an error if no element is found or if it will return a Promise and retry. Depending on what page content we select, different queries may be more or less appropriate.
 
 A [priority guide](https://testing-library.com/docs/queries/about/#priority) recommends on how to make use of semantic queries to test your components in the most accessible way:
 
@@ -19,11 +21,12 @@ A [priority guide](https://testing-library.com/docs/queries/about/#priority) rec
 7. `*ByTitle`: The title attribute is not consistently read by screen readers, and is not visible by default for sighted users.
 
 8. `*ByTestId`: The user cannot see/hear these, so this is only recommended for cases where you can't match by role or text.
+
 ## Task
 
-Test the UI components in `InfoTile` get rendered as expected.
+Test the UI components in `InfoTile` get rendered as expected using the queries above.
 
-1. Go to file `/src/tests/task-01-queries.test.js`
+1. Go to file `app/src/tests/task-01-queries.test.js`
 2. Write tests for each test case on the file.
 
 #### Next: [Solution for 1. Queries](./SOLUTION.md)

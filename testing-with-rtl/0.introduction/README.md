@@ -28,4 +28,4 @@ These utilities encourage testing components the way users interact with them. T
 - `fireEvent` - Methods for firing DOM events (`click`, `focus`, etc.)
 - `waitFor` and `waitForElementToBeRemoved` - Methods to wait for an element to appear or disappear in response to an event, user action, timeout, or `Promise`.
 
-#### Next: [1. Queries](../1.queries/README.md)
+#### Next: [1. Basic Component](../1.basic-component/README.md)

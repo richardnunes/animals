@@ -9,3 +9,5 @@ https://kentcdodds.com/blog/common-mistakes-with-react-testing-library
 https://kentcdodds.com/blog/fix-the-not-wrapped-in-act-warning
 
 https://www.robinwieruch.de/react-testing-library/
+
+https://polvara.me/posts/mocking-context-with-react-testing-library

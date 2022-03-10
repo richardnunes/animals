@@ -2,33 +2,33 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import SavedList from "../components/SavedList";
 import { LikesContext } from "../contexts/Likes";
 
+const mockLikesWithItems = {
+  one: {
+    name: "test-name-1",
+    image_link: "test-image-link",
+  },
+  two: {
+    name: "test-name-2",
+    image_link: "test-image-link",
+  },
+};
+const likeContext = {
+  likes: {},
+  likeItem: jest.fn(),
+  removeItems: jest.fn(),
+};
+
+const renderListComponent = (likes = {}) => {
+  likeContext.likes = likes;
+
+  return render(
+    <LikesContext.Provider value={likeContext}>
+      <SavedList />
+    </LikesContext.Provider>
+  );
+};
+
 describe("given the SavedList component is rendered", () => {
-  const mockLikesWithItems = {
-    one: {
-      name: "test-name-1",
-      image_link: "test-image-link",
-    },
-    two: {
-      name: "test-name-2",
-      image_link: "test-image-link",
-    },
-  };
-  const likeContext = {
-    likes: {},
-    likeItem: jest.fn(),
-    removeItems: jest.fn(),
-  };
-
-  const renderListComponent = (likes = {}) => {
-    likeContext.likes = likes;
-
-    return render(
-      <LikesContext.Provider value={likeContext}>
-        <SavedList />
-      </LikesContext.Provider>
-    );
-  };
-
   describe("when multiple liked items exist", () => {
     it("then should contain a heading", () => {
       renderListComponent(mockLikesWithItems);
