@@ -8,18 +8,20 @@ import {
 } from "@testing-library/react";
 import App from "../App";
 
-describe("given the App rendered", () => {
-  const mockData = {
-    data: {
-      id: "0",
-      name: "The animal's name",
-      image_link: "//image-url",
-      latin_name: "An original latin name",
-    },
-  };
+jest.mock("axios");
 
+const mockData = {
+  data: {
+    id: "0",
+    name: "The animal's name",
+    image_link: "//image-url",
+    latin_name: "An original latin name",
+  },
+};
+
+describe("given the App is rendered", () => {
   beforeEach(() => {
-    jest.spyOn(axios, "get").mockResolvedValue(mockData);
+    axios.get.mockResolvedValue(mockData);
   });
 
   const renderComponent = () => render(<App />);
@@ -46,7 +48,7 @@ describe("given the App rendered", () => {
 
       renderComponent();
 
-      jest.spyOn(axios, "get").mockResolvedValue(newMockData);
+      axios.get.mockResolvedValue(newMockData);
 
       fireEvent.click(screen.getAllByRole("button", { name: "next" })[0]);
 

@@ -23,17 +23,50 @@ A [priority guide](https://testing-library.com/docs/queries/about/#priority) rec
 8. `*ByTestId`: The user cannot see/hear these, so this is only recommended for cases where you can't match by role or text.
 
 ```js
-const OurComponent = () => {  // r/unexpectedcommunism
-    return {
-        <h1>Hello World!</h1>
-    };
-};
+const MyComponent = () => <h1>Hello World!</h1>;
 
-render(<OurComponent />);
+import { render } from "@testing-library/react";
+
+render(<MyComponent />);
 
 expect(
   screen.getByRole("heading", { name: "Hello World!" })
 ).toBeInTheDocument();
+```
+
+## Querying Within Elements
+
+`within` takes a DOM element and binds it to the raw query functions, allowing them to be used without specifying a container. It is the recommended approach for libraries built on this API and is used under the hood in React Testing Library and Vue Testing Library.
+
+```js
+const MyComponent = () => {
+  return (
+    <>
+      <header>
+        <a href="/foo">Foo</a>
+      </header>
+      <ul>
+        <li>
+          <a href="/foo">Foo</a>
+        </li>
+        <li>
+          <a href="/bar">Bar</a>
+        </li>
+        <li>
+          <a href="/baz">Baz</a>
+        </li>
+      </ul>
+    </>
+  );
+};
+
+import { render, within, screen } from "@testing-library/react";
+
+render(<MyComponent />);
+
+const list = screen.getByRole("list");
+
+expect(within(list).getByRole("link", { name: "Foo" }).toBeInTheDocument());
 ```
 
 ## Task

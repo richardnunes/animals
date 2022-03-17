@@ -107,4 +107,4 @@ describe("given the SavedList component is rendered", () => {
 });
 ```
 
-#### [3. Custom Hooks](../3.custom-hooks/README.md)
+#### [3. Custom Hooks & Mocking](../3.custom-hooks-mocking/README.md)

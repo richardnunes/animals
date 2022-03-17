@@ -13,9 +13,7 @@ describe("given useFetchNext hook", () => {
 
   beforeEach(() => {
     axios.get.mockResolvedValue(mockData);
-    mockConsoleError = jest
-      .spyOn(console, "error")
-      .mockResolvedValue(jest.fn());
+    mockConsoleError = jest.spyOn(console, "error").mockReturnValue(jest.fn());
   });
 
   it("should fetch data from provided URL", async () => {
