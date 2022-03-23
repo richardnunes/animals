@@ -69,4 +69,4 @@ it("should fetch users", async () => {
 1. Go to file `app/src/tests/task-03-custom-hooks-mocking.test.js`
 2. Write tests for each test case in the file.
 
-#### [Solution to custom hooks task](./SOLUTION.md)
+#### Next: [Solution to custom hooks task](./SOLUTION.md)

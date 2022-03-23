@@ -66,4 +66,4 @@ Read more about common mistakes.
 
 https://kentcdodds.com/blog/common-mistakes-with-react-testing-library
 
-#### [6. Tooling](../6.tooling/README.md)
+#### Next: [6. Tooling](../6.tooling/README.md)

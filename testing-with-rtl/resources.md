@@ -1,19 +1,21 @@
-https://jestjs.io/
+# Workshop Resources
 
-https://testing-library.com/
+- https://jestjs.io/
 
-https://github.com/testing-library/react-testing-library
+- https://testing-library.com/
 
-https://kentcdodds.com/blog/common-mistakes-with-react-testing-library
+- https://github.com/testing-library/react-testing-library
 
-https://kentcdodds.com/blog/fix-the-not-wrapped-in-act-warning
+- https://kentcdodds.com/blog/common-mistakes-with-react-testing-library
 
-https://www.robinwieruch.de/react-testing-library/
+- https://kentcdodds.com/blog/fix-the-not-wrapped-in-act-warning
 
-https://polvara.me/posts/mocking-context-with-react-testing-library
+- https://www.robinwieruch.de/react-testing-library/
 
-https://react-hooks-testing-library.com/usage/basic-hooks
+- https://polvara.me/posts/mocking-context-with-react-testing-library
 
-https://jestjs.io/docs/mock-functions#mocking-modules
+- https://react-hooks-testing-library.com/usage/basic-hooks
 
-https://testing-library.com/docs/dom-testing-library/api-within/
+- https://jestjs.io/docs/mock-functions#mocking-modules
+
+- https://testing-library.com/docs/dom-testing-library/api-within/
