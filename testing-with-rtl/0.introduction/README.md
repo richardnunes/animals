@@ -1,16 +1,14 @@
 # Introduction
 
-This workshop will cover how to test React components using Jest and React Testing Library. We'll go through a series of tasks and highlight the best practices when using these tools for React testing.
+This workshop will cover how to test React components using React Testing Library. We'll go through a series of tasks and highlight the best practices when using this tool for React testing.
 
 ### Before we begin
 
-- Node.js v14.18
-- Clone the following repo [url]
-- Follow instructions on the README file to setup the app
+Make sure you have all the following pre-requistes:
 
-## What is [Jest](https://jestjs.io/)?
-
-Jest is a JavaScript **testing framework and runner** that provides built-in mocking utilities.
+-   Node.js v14.18
+-   Clone the following repo [url]
+-   Follow instructions on the `README` file to setup the app
 
 ## What is [React Testing Library](https://testing-library.com/)?
 
@@ -22,10 +20,10 @@ These utilities encourage testing components the way users interact with them. T
 
 ### RTL common utilities
 
-- `getBy*` and `getAllBy*` - Returns the matching node(s) for a query, and throws an error if no elements match.
-- `queryBy*` and `queryAllBy*` - Returns the matching node(s) for a query, and return `null` (or empty array) if no elements match.
-- `findBy*` and `findAllBy*` - Returns a `Promise` which resolves when the element(s) for a query is found. The `Promise` is rejected if no element(s) is found.
-- `fireEvent` - Methods for firing DOM events (`click`, `focus`, etc.)
-- `waitFor` and `waitForElementToBeRemoved` - Methods to wait for an element to appear or disappear in response to an event, user action, timeout, or `Promise`.
+-   `getBy*` and `getAllBy*` - Returns the matching node(s) for a query, and throws an error if no elements match.
+-   `queryBy*` and `queryAllBy*` - Returns the matching node(s) for a query, and return `null` (or empty array) if no elements match.
+-   `findBy*` and `findAllBy*` - Returns a `Promise` which resolves when the element(s) for a query is found. The `Promise` is rejected if no element(s) is found.
+-   `fireEvent` - Methods for firing DOM events (`click`, `focus`, etc.)
+-   `waitFor` and `waitForElementToBeRemoved` - Methods to wait for an element to appear or disappear in response to an event, user action, timeout, or `Promise`.
 
 #### Next: [1. Basic Component](../1.basic-component/README.md)

@@ -2,7 +2,7 @@
 
 ## Queries
 
-Queries are types of methods that RTL gives us to find elements on the page such as `get`, `find`, `query`. The difference between them is whether the query will throw an error if no element is found or if it will return a Promise and retry. Depending on what page content we select, different queries may be more or less appropriate.
+Queries such as `get`, `find` and `query` allow us to find elements on the page. The difference between them is whether the query will throw an error if no element is found or if it will return a Promise and retry.
 
 A [priority guide](https://testing-library.com/docs/queries/about/#priority) recommends on how to make use of semantic queries to test your components in the most accessible way:
 
@@ -20,7 +20,7 @@ A [priority guide](https://testing-library.com/docs/queries/about/#priority) rec
 
 7. `*ByTitle`: The title attribute is not consistently read by screen readers, and is not visible by default for sighted users.
 
-8. `*ByTestId`: The user cannot see/hear these, so this is only recommended for cases where you can't match by role or text.
+8. `*ByTestId`: The user cannot see/hear these, so this is only recommended for cases where you can't match by role or text. Should only be used as a last resort.
 
 ```js
 const MyComponent = () => <h1>Hello World!</h1>;
@@ -30,34 +30,34 @@ import { render } from "@testing-library/react";
 render(<MyComponent />);
 
 expect(
-  screen.getByRole("heading", { name: "Hello World!" })
+    screen.getByRole("heading", { name: "Hello World!" })
 ).toBeInTheDocument();
 ```
 
 ## Querying Within Elements
 
-`within` takes a DOM element and binds it to the raw query functions, allowing them to be used without specifying a container. It is the recommended approach for libraries built on this API and is used under the hood in React Testing Library and Vue Testing Library.
+`within` takes a DOM element and binds it to the query functions, so they can used without specifying a container.
 
 ```js
 const MyComponent = () => {
-  return (
-    <>
-      <header>
-        <a href="/foo">Foo</a>
-      </header>
-      <ul>
-        <li>
-          <a href="/foo">Foo</a>
-        </li>
-        <li>
-          <a href="/bar">Bar</a>
-        </li>
-        <li>
-          <a href="/baz">Baz</a>
-        </li>
-      </ul>
-    </>
-  );
+    return (
+        <>
+            <header>
+                <a href='/foo'>Foo</a>
+            </header>
+            <ul>
+                <li>
+                    <a href='/foo'>Foo</a>
+                </li>
+                <li>
+                    <a href='/bar'>Bar</a>
+                </li>
+                <li>
+                    <a href='/baz'>Baz</a>
+                </li>
+            </ul>
+        </>
+    );
 };
 
 import { render, within, screen } from "@testing-library/react";
@@ -71,9 +71,9 @@ expect(within(list).getByRole("link", { name: "Foo" }).toBeInTheDocument());
 
 ## Task
 
-Test the UI components in `InfoTile` get rendered as expected using the queries above.
+Test the UI components in `InfoTile` get rendered as expected using what you've learnt.
 
-1. Go to file `app/src/tests/task-01-queries.test.js`
+1. Go to file `src/tests/task-01-queries.test.js`
 2. Write tests for each test case on the file.
 
-#### Next: [Solution for 1. Queries](./SOLUTION.md)
+#### Next (once you've completed the task): [Solution for 1. Queries](./SOLUTION.md)
