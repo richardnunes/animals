@@ -5,15 +5,17 @@ import useFetchNext from "../hooks/useFetchNext";
 
 jest.mock("axios");
 
-describe("given useFetchNext hook", () => {
-  let mockConsoleError;
-  const mockData = {
-    data: { test: "test" },
-  };
+let mockConsoleError;
+const mockData = {
+  data: { test: "test" },
+};
 
+describe("given useFetchNext hook", () => {
   beforeEach(() => {
     axios.get.mockResolvedValue(mockData);
-    mockConsoleError = jest.spyOn(console, "error").mockReturnValue(jest.fn());
+    mockConsoleError = jest
+      .spyOn(console, "error")
+      .mockResolvedValue(jest.fn());
   });
 
   it("should fetch data from provided URL", async () => {

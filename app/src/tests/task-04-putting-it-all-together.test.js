@@ -19,12 +19,12 @@ const mockData = {
   },
 };
 
+const renderComponent = () => render(<App />);
+
 describe("given the App is rendered", () => {
   beforeEach(() => {
     axios.get.mockResolvedValue(mockData);
   });
-
-  const renderComponent = () => render(<App />);
 
   it("should render the animal's latin name", async () => {
     renderComponent();

@@ -8,12 +8,12 @@ import useFetchNext from "../hooks/useFetchNext";
 
 jest.mock("axios");
 
-describe("given useFetchNext hook", () => {
-  let mockConsoleError;
-  const mockData = {
-    data: { test: "test" },
-  };
+let mockConsoleError;
+const mockData = {
+  data: { test: "test" },
+};
 
+describe("given useFetchNext hook", () => {
   beforeEach(() => {
     axios.get.mockResolvedValue(mockData);
     mockConsoleError = jest
